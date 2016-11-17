@@ -51,48 +51,50 @@ library or taking a photo with the camera.
       ``Image`` tag) and ``width, height`` specify the dimensions of the image.
 
 
-Example
 
-::
-import React from 'react';
-import {
-  Image,
-  Linking,
-  Platform,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-import Exponent from 'exponent';
+Example Image picker
+''''''''''''''
 
-export default class HomeScreen extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-            <TouchableOpacity onPress={ ()=> this.openImage() }>
-                  <View>
-                        <Text>Carregar Imagem</Text>
-                  </View>
-            </TouchableOpacity>
-      </View>
-    );
-  }
+.. code-block:: javascript
+   import React from 'react';
+   import {
+     Image,
+     Linking,
+     Platform,
+     ScrollView,
+     StyleSheet,
+     Text,
+     TouchableOpacity,
+     View,
+   } from 'react-native';
+   import Exponent from 'exponent';
 
-  openImage(){
-        Exponent.ImagePicker.launchImageLibraryAsync(
-             {
-                   allowsEditing:true,
-                   aspect: [4,3]
-             }
-      ).then(
-         (data)=>{
-            console.log(data);
-      }
-      );
- }
-}  
+   export default class HomeScreen extends React.Component {
+     render() {
+       return (
+         <View style={styles.container}>
+               <TouchableOpacity onPress={ ()=> this.openImage() }>
+                     <View>
+                           <Text>Carregar Imagem</Text>
+                     </View>
+               </TouchableOpacity>
+         </View>
+       );
+     }
+
+     openImage(){
+           Exponent.ImagePicker.launchImageLibraryAsync(
+                {
+                      allowsEditing:true,
+                      aspect: [4,3]
+                }
+         ).then(
+            (data)=>{
+               console.log(data);
+         }
+         );
+    }
+   }  
 
 
 Output:
