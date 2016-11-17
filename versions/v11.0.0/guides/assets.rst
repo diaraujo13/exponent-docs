@@ -37,11 +37,11 @@ In development
 While you're working on a local copy of your project, assets are served from
 your local filesystem and are integrated with the JavaScript module system.
 So if I want to include an image I can ``require`` it, like I would if it
-were JavaScript code: ``require('./assets/images/example.png')``. The only
+were JavaScript code: ``require('../assets/images/example.png')``. The only
 difference here is that we need to specify an extension -- without an extension,
 the module system will assume it is a JavaScript file. This statement evaluates
 at compile time to an object that includes metadata about the asset that can
-be consumed by the ``Image`` component to fetch it and render it: ``<Image source={require('./assets/images/example.png')} />``
+be consumed by the ``Image`` component to fetch it and render it: ``<Image source={require('../assets/images/example.png')} />``
 
 In production
 '''''''''''''
